@@ -1,11 +1,21 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, TouchableOpacity} from 'react-native';
 
 function HomePage({navigation}) {
   return (
     <View>
-      <Text>Home Page</Text>
-      <Button title="Sum" onPress={() => navigation.navigate('Sum')} />
+      <TouchableOpacity onPress={() => navigation.navigate('Sum')}>
+        <Text>Sum</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Minus')}>
+        <Text>Minus</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Times')}>
+        <Text>Times</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Divide')}>
+        <Text>Divide</Text>
+      </TouchableOpacity>
     </View>
   );
 }

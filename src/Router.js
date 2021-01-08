@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {HomePage, SumApp} from './pages';
+import {HomePage, SumApp, MinusApp, TimesApp, DivideApp} from './pages';
 
 const Stack = createStackNavigator();
 
@@ -12,6 +11,9 @@ export default function Router() {
       <Stack.Navigator>
         <Stack.Screen name="Home" component={HomePage} />
         <Stack.Screen name="Sum" component={SumApp} />
+        <Stack.Screen name="Minus" component={MinusApp} />
+        <Stack.Screen name="Times" component={TimesApp} />
+        <Stack.Screen name="Divide" component={DivideApp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

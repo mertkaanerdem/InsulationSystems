@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {View, Text, TextInput, Button} from 'react-native';
+import {View, Text, TextInput, Button, TouchableOpacity} from 'react-native';
 
-function SumApp() {
+function SumApp({navigation}) {
   const [numOne, setNumOne] = useState(0);
   const [numTwo, setNumTwo] = useState(0);
   const [sum, setSum] = useState();
@@ -22,6 +22,9 @@ function SumApp() {
       />
       <Text>Sonuç: {sum}</Text>
       <Button title="Topla!" onPress={() => sumNumbers()} />
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Text>Go Home</Text>
+      </TouchableOpacity>
     </View>
   );
 }
