@@ -8,8 +8,12 @@ const Stack = createStackNavigator();
 export default function Router() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomePage} />
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen
+          options={{animationEnabled: true}}
+          name="Home"
+          component={HomePage}
+        />
         <Stack.Screen name="Sum" component={SumApp} />
         <Stack.Screen name="Minus" component={MinusApp} />
         <Stack.Screen name="Times" component={TimesApp} />

@@ -1,30 +1,25 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, Button, TouchableOpacity} from 'react-native';
+import {MathCard} from '../components';
 
 function SumApp({navigation}) {
   const [numOne, setNumOne] = useState(0);
   const [numTwo, setNumTwo] = useState(0);
-  const [sum, setSum] = useState();
+  const [result, setResult] = useState();
 
-  function sumNumbers() {
-    return setSum(parseInt(numOne) + parseInt(numTwo));
+  function answer() {
+    return setResult(parseFloat(numOne) + parseFloat(numTwo));
   }
 
   return (
-    <View>
-      <TextInput
-        placeholder="Birinci sayıyı gir"
-        onChangeText={(val) => setNumOne(val)}
+    <View style={{flex: 1, backgroundColor: '#fff'}}>
+      <MathCard
+        enterNumber1={(val) => setNumOne(val)}
+        enterNumber2={(val) => setNumTwo(val)}
+        mathResult={(val) => answer(val)}
+        item={result}
+        goHome={() => navigation.goBack()}
       />
-      <TextInput
-        placeholder="İkinci sayıyı gir"
-        onChangeText={(val) => setNumTwo(val)}
-      />
-      <Text>Sonuç: {sum}</Text>
-      <Button title="Topla!" onPress={() => sumNumbers()} />
-      <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text>Go Home</Text>
-      </TouchableOpacity>
     </View>
   );
 }
